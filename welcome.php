@@ -1,3 +1,13 @@
+<?
+if(isset($_GET["Naam"]) || isset($_GET["email"])){
+    print("true");
+    $naam = $_GET["Naam"];
+    $email = $_GET["email"];
+}else{
+    print("false");
+    $naam = null;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +23,10 @@
         <input type="text" name="email" value=""><br>
         <button class="btn btn-primary">send</button>
     </form>
-    
+    <div>
+        <div><b>Ingevulde gegevens zijn:</b></div>
+        <div>naam: <?if(isset($naam)){print($naam);}?></div>
+        <div>email: <?if(isset($email)){print($email);}?></div>
+    </div>
 </body>
 </html>
