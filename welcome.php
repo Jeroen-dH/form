@@ -1,8 +1,8 @@
 <?
-if(isset($_GET["Naam"]) || isset($_GET["email"])){
+if(isset($_POST["Naam"]) || isset($_POST["email"])){
     print("true");
-    $naam = $_GET["Naam"];
-    $email = $_GET["email"];
+    $naam = $_POST["Naam"];
+    $email = $_POST["email"];
 }else{
     print("false");
     $naam = null;
@@ -18,7 +18,7 @@ if(isset($_GET["Naam"]) || isset($_GET["email"])){
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="get">
+    <form action="" method="post">
         <input type="text" name="Naam" value=""><br>
         <input type="text" name="email" value=""><br>
         <button class="btn btn-primary">send</button>
