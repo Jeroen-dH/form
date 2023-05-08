@@ -16,7 +16,14 @@ function form_paniek(){
  ?>
     <div class="c1">
         <div class="red-bar">
-            test
+            <div class="d-flex">
+                <div>
+                    Er heerst paniek...
+                </div>
+                <div>
+                    onkunde
+                </div>
+            </div>
         </div>
         <div class="main"> 
             <b>Er heerst paniek...</b>
@@ -49,9 +56,37 @@ function form_paniek(){
                 </div>
             </form>
         </div>
-        <footer>
-            Made by Jeroen :D 
-        </footer>
+    </div>
+ <?php
+}
+
+function resulaat_paniek(){
+    ?>
+    <div class="c1">
+        <div class="red-bar">
+            <div class="d-flex">
+                <div class="btn btn-danger">
+                    Er heerst paniek...
+                </div>
+                <div>
+                    onkunde
+                </div>
+            </div>
+        </div>
+        <div class="main"> 
+            <b>Er heerst paniek...</b>
+            <div class="antwoorden">
+                <div>Er heerst paniek in het koninkrijk <?=$_POST["land"]?>, Koning egmod is ten einde raad en als koning <?=$_POST["docent"]?> ten einde raad is, dan roept hij zijn ten-einde-aadsheer <?=$_POST["persoon"]?>.</div>
+                <div>"<?=$_POST["persoon"]?>! Het is een ramp! het is een schande!"</div>
+                <div>"Sire, Majesteit, Uwe luidruchtigheid, wat is er aan de hand?"</div>
+                <div>"Mijn <?=$_POST["dier"]?> is verdwenen! Zo maar, zonder waarschuwing. En ik had net <?=$_POST["speelgoed"]?> voor het gekocht!"</div>
+                <div>"Majesteit, uw <?=$_POST["dier"]?> komt vast vanzelf weer terug?"</div>
+                <div>"Ja, da's leuk en aardig, maar hoe moet ik in de tissentijd"<?=$_POST["bezigheid"]?> leren?</div>
+                <div>"Maar Sire, daar kunt u toch uw supercomputer voor gebruiken."</div>
+                <div>"<?=$_POST["persoon"]?>, je hebt helemaal gelijk! Wat zou ik doen als ik jou niet had."</div>
+                <div>"<?=$_POST["verveelt"]?>, sire."</div>
+            </div>
+        </div>
     </div>
  <?php
 }
@@ -74,6 +109,9 @@ function form_paniek(){
             </div>
             <div class="content">
                 <?=$result()?>
+                <footer>
+                    Made by Jeroen :D 
+                </footer>
             </div>
         </div>
     </div>
@@ -123,7 +161,11 @@ function form_paniek(){
     .vragen > div{
         height: 40px;
         margin: 10px;
-        /* text-align:left; */
         white-space: nowrap;
+    }
+    .antwoorden{
+        margin: 10px;
+        text-align:left;
+
     }
 </style>    
