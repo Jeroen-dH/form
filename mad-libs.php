@@ -6,6 +6,12 @@ if(isset($_POST["action"])){
         case "resultPaniek":
             $result = "resulaat_paniek";
             break; 
+        case "resultOnkunde":
+            $result = "resulaat_onkunde";
+            break; 
+        case "onkunde":
+            $result = "form_onkunde";
+            break; 
     }
 }else{
     $result = "form_paniek";
@@ -14,82 +20,113 @@ if(isset($_POST["action"])){
 
 function form_paniek(){
  ?>
-    <div class="c1">
-        <div class="red-bar">
+    <div class="main"> 
+        <b>Er heerst paniek...</b>
+        <form method="post">
             <div class="d-flex">
-                <div>
-                    Er heerst paniek...
+                <div class="vragen" style="width: 50%; text-align: center" >
+                    <div>Welk dier zou je nooit als huisdier willen hebben?</div>
+                    <div>Wie is de belangrijkste persoon in je leven?</div>
+                    <div>In welk land zou je graag willen wonen?</div>
+                    <div>Wat doe je als je je verveelt?</div>
+                    <div>Met welk speelgoed speelde je als kind het meest?</div>
+                    <div>Bij welke docent spijbel je het liefst?</div>
+                    <div>Als je €100.000,- had, wat zou je dan kopen?</div>
+                    <div>Wat is je favoriete bezigheid?</div>
                 </div>
-                <div>
-                    onkunde
+                <div class="vragen" style="width: 50%; text-align: center" >
+                    <div><input required type="text" name="dier" id=""></div>
+                    <div><input required type="text" name="persoon" id=""></div>
+                    <div><input required type="text" name="land" id=""></div>
+                    <div><input required type="text" name="verveelt" id=""></div>
+                    <div><input required type="text" name="speelgoed" id=""></div>
+                    <div><input required type="text" name="docent" id=""></div>  
+                    <div><input required type="text" name="kopen" id=""></div>
+                    <div><input required type="text" name="bezigheid" id=""></div>
                 </div>
             </div>
-        </div>
-        <div class="main"> 
-            <b>Er heerst paniek...</b>
-            <form method="post">
-                <div class="d-flex">
-                    <div class="vragen" style="width: 50%; text-align: center" >
-                        <div>Welk dier zou je nooit als huisdier willen hebben?</div>
-                        <div>Wie is de belangrijkste persoon in je leven?</div>
-                        <div>In welk land zou je graag willen wonen?</div>
-                        <div>Wat doe je als je je verveelt?</div>
-                        <div>Met welk speelgoed speelde je als kind het meest?</div>
-                        <div>Bij welke docent spijbel je het liefst?</div>
-                        <div>Als je €100.000,- had, wat zou je dan kopen?</div>
-                        <div>Wat is je favoriete bezigheid?</div>
-                    </div>
-                    <div class="vragen" style="width: 50%; text-align: center" >
-                        <div><input required type="text" name="dier" id=""></div>
-                        <div><input required type="text" name="persoon" id=""></div>
-                        <div><input required type="text" name="land" id=""></div>
-                        <div><input required type="text" name="verveelt" id=""></div>
-                        <div><input required type="text" name="speelgoed" id=""></div>
-                        <div><input required type="text" name="docent" id=""></div>  
-                        <div><input required type="text" name="kopen" id=""></div>
-                        <div><input required type="text" name="bezigheid" id=""></div>
-                    </div>
-                </div>
 
-                <div class="mx-auto" style="width: 100px;">
-                    <button name="action" value="resultPaniek">Versturen</button>
+            <div class="mx-auto" style="width: 100px;">
+                <button class="btn btn-danger" name="action" value="resultPaniek">Versturen</button>
+            </div>
+        </form>
+    </div>
+ <?php
+}
+
+
+
+function form_onkunde(){
+ ?>
+    <div class="main"> 
+        <b>onkunde</b>
+        <form method="post">
+            <div class="d-flex">
+                <div class="vragen" style="width: 50%; text-align: center" >
+                    <div>Wat zou je graag willen kunnen?</div>
+                    <div>Met welke persoon kun je goed opschieten?</div>
+                    <div>Wat is je favoriete getal?</div>
+                    <div>Wat heb je altijd bij je als je op vakantie gaat?</div>
+                    <div>Wat is je beste persoonlijke eigenschap?</div>
+                    <div>Wat is je slechtste persoonlijke eigenschap?</div>
+                    <div>Wat is het ergste dat je kan overkomen</div>
                 </div>
-            </form>
-        </div>
+                <div class="vragen" style="width: 50%; text-align: center" >
+                    <div><input required type="text" name="kunnen" id=""></div>
+                    <div><input required type="text" name="persoon" id=""></div>
+                    <div><input required type="text" name="getal" id=""></div>
+                    <div><input required type="text" name="vakantie" id=""></div>
+                    <div><input required type="text" name="beste" id=""></div>
+                    <div><input required type="text" name="slechtste" id=""></div>  
+                    <div><input required type="text" name="overkomen" id=""></div>
+                </div>
+            </div>
+
+            <div class="mx-auto" style="width: 100px;">
+                <button class="btn btn-danger" name="action" value="resultOnkunde">Versturen</button>
+            </div>
+        </form>
     </div>
  <?php
 }
 
 function resulaat_paniek(){
     ?>
-    <div class="c1">
-        <div class="red-bar">
-            <div class="d-flex">
-                <div class="btn btn-danger">
-                    Er heerst paniek...
-                </div>
-                <div>
-                    onkunde
-                </div>
-            </div>
-        </div>
-        <div class="main"> 
-            <b>Er heerst paniek...</b>
-            <div class="antwoorden">
-                <div>Er heerst paniek in het koninkrijk <?=$_POST["land"]?>, Koning egmod is ten einde raad en als koning <?=$_POST["docent"]?> ten einde raad is, dan roept hij zijn ten-einde-aadsheer <?=$_POST["persoon"]?>.</div>
-                <div>"<?=$_POST["persoon"]?>! Het is een ramp! het is een schande!"</div>
-                <div>"Sire, Majesteit, Uwe luidruchtigheid, wat is er aan de hand?"</div>
-                <div>"Mijn <?=$_POST["dier"]?> is verdwenen! Zo maar, zonder waarschuwing. En ik had net <?=$_POST["speelgoed"]?> voor het gekocht!"</div>
-                <div>"Majesteit, uw <?=$_POST["dier"]?> komt vast vanzelf weer terug?"</div>
-                <div>"Ja, da's leuk en aardig, maar hoe moet ik in de tissentijd"<?=$_POST["bezigheid"]?> leren?</div>
-                <div>"Maar Sire, daar kunt u toch uw supercomputer voor gebruiken."</div>
-                <div>"<?=$_POST["persoon"]?>, je hebt helemaal gelijk! Wat zou ik doen als ik jou niet had."</div>
-                <div>"<?=$_POST["verveelt"]?>, sire."</div>
-            </div>
+    <div class="main"> 
+        <b>Er heerst paniek...</b>
+        <div class="antwoorden">
+            <div>Er heerst paniek in het koninkrijk <?=$_POST["land"]?>, Koning egmod is ten einde raad en als koning <?=$_POST["docent"]?> ten einde raad is, dan roept hij zijn ten-einde-aadsheer <?=$_POST["persoon"]?>.</div>
+            <div>"<?=$_POST["persoon"]?>! Het is een ramp! het is een schande!"</div>
+            <div>"Sire, Majesteit, Uwe luidruchtigheid, wat is er aan de hand?"</div>
+            <div>"Mijn <?=$_POST["dier"]?> is verdwenen! Zo maar, zonder waarschuwing. En ik had net <?=$_POST["speelgoed"]?> voor het gekocht!"</div>
+            <div>"Majesteit, uw <?=$_POST["dier"]?> komt vast vanzelf weer terug?"</div>
+            <div>"Ja, da's leuk en aardig, maar hoe moet ik in de tissentijd"<?=$_POST["bezigheid"]?> leren?</div>
+            <div>"Maar Sire, daar kunt u toch uw supercomputer voor gebruiken."</div>
+            <div>"<?=$_POST["persoon"]?>, je hebt helemaal gelijk! Wat zou ik doen als ik jou niet had."</div>
+            <div>"<?=$_POST["verveelt"]?>, sire."</div>
         </div>
     </div>
  <?php
 }
+
+
+function resulaat_onkunde(){
+    ?>
+    <div class="main"> 
+        <b>Onkunde</b>
+        <div class="antwoorden">
+            <div>Er zijn veel mensen die niet kunnen <?=$_POST["kunnen"] ?>. Neem nou <?=$_POST["persoon"] ?>. Zelfs met de hulp</div>
+            <div>van een <?=$_POST["vakantie"] ?> of zelfs <?=$_POST["getal"] ?> kan <?=$_POST["persoon"] ?> niet <?=$_POST["kunnen"] ?>. Dat heeft niet te maken met</div>
+            <div>een gebrek aan <?=$_POST["beste"] ?>, maar met een te veel aan <?=$_POST["slechtste"] ?>. Te veel <?=$_POST["slechtste"] ?></div>
+            <div>leidt tot <?=$_POST["overkomen"] ?> en dat is niet goed als je wilt <?=$_POST["kunnen"] ?>. Helaas voor <?=$_POST["persoon"] ?>.</div>
+        </div>
+    </div>
+ <?php
+}
+
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -108,9 +145,24 @@ function resulaat_paniek(){
                 Mad Libs
             </div>
             <div class="content">
+                <div class="c1">
+                    <div class="red-bar">
+                        <form method="post">
+                            <div class="d-flex">
+                                <div class="option">
+                                    <button>Er heerst paniek...</button>
+                                </div>
+                                <div class="option">
+                                    <button name="action" value="onkunde" >onkunde</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 <?=$result()?>
+             </div>
+
                 <footer>
-                    Made by Jeroen :D 
+                    ©Made by Jeroen
                 </footer>
             </div>
         </div>
@@ -167,5 +219,18 @@ function resulaat_paniek(){
         margin: 10px;
         text-align:left;
 
+    }
+    .option > button{
+        background-color: red;
+        border: 1px solid red;
+        color: white;
+        padding: 8px;
+    }
+    .option >button:hover{
+        background-color: #e62e00;
+        border: 1px solid #d9d9d9;
+    }
+    .option{
+        margin-right: 25px;
     }
 </style>    
